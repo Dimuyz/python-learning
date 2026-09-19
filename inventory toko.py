@@ -1,0 +1,111 @@
+#membuat sebuah inventory toko 
+import time
+barang = {}
+
+while True:
+    print("===== INVENTORY TOKO =====")
+    print("1. Tambah Barang")
+    print("2. Lihat Barang")
+    print("3. Cari barang")
+    print("4. hitung total stok")
+    print("5. keluar")
+    pilih = int(input("masukan pilihan: "))
+
+    if (pilih == 1):
+        while True:
+           print("\n===== TAMBAH BARANG =====")
+           nama_barang = input("masukan nama barang: ")
+           harga_barang = int(input("masukan harga barang: "))
+           stok_barang = int(input("masukan stok barang: "))
+
+           barang[nama_barang] = {
+               "harga" : harga_barang,
+               "stok" : stok_barang
+           }
+
+           time.sleep(1)
+           print("barang berasil di tambahkan\n")
+           print("apakah ingin menambahkan barang lagi? (yes/no)")
+           answer = input("jawaban: ")
+           if answer.lower() == "yes":
+               print("baik kita lanjutkan\n")
+               continue
+           elif answer.lower() == "no":
+               print("baik kita sudahi program\n")
+               break
+           else:
+             print("command salah\n")
+             break
+           
+    elif (pilih == 2):
+        while True:
+           print("\n===== LIHAT BARANG =====")
+           print("baik sedang melakukan pencarian data...")
+           time.sleep(2)
+           print("berikut adalah data kamu")
+           for item in barang:
+               print(item, ":", barang[item])
+
+           print("apakah kamu ingin tetap berada di lihat barang? (yes/no)")
+           answer = input("jawaban: ")
+           if (answer.lower() == "yes"):
+                   print("baik tetap berada di lihat barang")
+                   continue
+           elif (answer.lower() == "no"):
+                   print("baik kembali ke menu")
+                   break
+           else:
+                   print("maaf perintah eror")
+                   break
+               
+    elif (pilih == 3):
+        while True:
+            print("====== PENCARIAN BARANG ======\n")
+            cari = input("masukan barang yang sedang di cari: ")
+            if cari in barang:
+                print(barang[cari])
+                print("\nbarang berhasil di tampilkan")
+                print("apakah anda ingin melihat barang lagi? (yes/no)")
+                answer = input("jawaban: ")
+                if (answer.lower() == "yes"):
+                     print("baik kita terus mencari barang")
+                     continue
+                elif (answer.lower() == "no"):
+                     print("baik kembali ke menu utama")
+                     break
+                else:
+                     print("command error")
+                     break
+
+    elif (pilih == 4):
+         print("====== PERHITUGAN BARANG ======")
+         print("apa yang mau anda hitung? ")
+         answer = input("masukan nama barang yang ingin di hitung: ")
+         if answer in barang:
+               total = barang[answer]["harga"] * barang[answer]["stok"]
+               print("nama: ", answer)
+               print("harga: ", barang[answer]["harga"])
+               print("stok: ", barang[answer]["stok"])
+               print("total: ", total)
+         else:
+              print("barang tidak di temukan")
+
+    elif (pilih == 5):
+         print("====== EXIT ======")
+         print("apakah kamu yakin ingin keluar dari program? (yes/no)")
+         answer = input("jawaban: ")
+         if answer.lower() == "yes":
+              print("baik kita keluar dari program")
+              time.sleep(3)
+              print("terimakasih sudah menggunakan program-!")
+              break
+         elif answer.lower() == "no":
+              print("baik kembali ke menu utama")
+              continue
+         else:
+              print("command salah-!")
+              continue
+                       
+
+
+              

@@ -1,0 +1,12 @@
+print("=== BIODATA DIGITAL ===")
+nama = input("Masukan nama: ")
+umur = input("Masukan umur: ")
+kelas = input("Masukan kelas: ")
+cita2 = input("Masukan cita cita: ")
+
+print("=============================")
+print("Nama: ", nama)
+print("Umur: ", umur)
+print("kelas: ", kelas)
+print("Cita cita: ", cita2)
+print("SELAMAT BELAJAR SAYANG!")
